@@ -1,6 +1,6 @@
 import React from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush, Label} from 'recharts';
-
+  
 const ChartTemperature = ({temperature}) => {
   const isLargeScreen = window.innerWidth > 999
 
