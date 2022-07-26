@@ -1,0 +1,16 @@
+.singleChartPage{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2%;
+  padding-top: 50px;
+}
+@media only screen and (min-width:999px){
+    .singleChartPage{
+      width: 80%;
+      margin-left: 20%;
+      min-height: 100vh;
+    }
+  }
