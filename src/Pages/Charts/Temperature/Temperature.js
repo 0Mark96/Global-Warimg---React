@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector} from "react-redux";
 import { fetchData} from '../../../redux/counter';
 import {useEffect} from 'react';
-import ChartTemperature from '../../../Component/ChartTemperature/ChartTemperature'
+import ChartTemperature from '../../../Component/DashBoard/ChartTemperature/ChartTemperature'
 const Temperature = () => {
   const temperature = useSelector(state => state.data)
   const dispatch = useDispatch()

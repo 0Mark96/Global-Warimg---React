@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../../Component/NavBar/NavBar";
+import NavBar from "../../Component/DashBoard/NavBar/NavBar";
 import styles from './Charts.module.scss';
 
 const Chartsdashboard = () => { 

@@ -1,0 +1,51 @@
+.nav_menu{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+     .span1,
+     .span2,
+     .span3 {
+        display:block;
+        width: 36px;
+        height: 4px;
+        background-color: white;
+        transition:  all .4s ease-in-out;
+        &:not(:last-child){
+            margin-bottom: 8px;
+         }
+     }  
+     .span1{
+         width: 16px;
+     }
+     .span2{
+         width: 32px;
+     }
+     .span3{
+         width: 48px;
+     }
+ }
+
+ 
+ .active{
+  
+     .span2{
+           width: 0 !important;
+     }
+     .span1{
+         transform: translateY(12px) rotate(45deg);
+         -webkit-transform: translateY(12px) rotate(45deg);
+         -ms-transform: translateY(12px) rotate(45deg);
+         -moz-transform: translateY(12px) rotate(45deg);
+         width: 42px;
+     }
+     .span3{
+         transform: translateY(-12px) rotate(-45deg);
+         -webkit-transform: translateY(-12px) rotate(-45deg);
+         -ms-transform: translateY(-12px) rotate(-45deg);
+         -moz-transform: translateY(-12px) rotate(-45deg);
+         width: 42px;
+     }
+    
+}
+
