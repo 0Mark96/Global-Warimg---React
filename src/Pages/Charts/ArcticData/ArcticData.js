@@ -9,6 +9,7 @@ const ArcticData = () => {
  
   useEffect(()=>{
   dispatch(fetchData('arcticData'))
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
  
   return (

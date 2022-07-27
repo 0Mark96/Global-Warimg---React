@@ -6,9 +6,10 @@ import {useEffect} from 'react'
 const NitrousOxide = () => {
   const nitrousOxide = useSelector(state => state.data)
   const dispatch = useDispatch()
-  console.log(nitrousOxide);
+  
   useEffect(()=>{
   dispatch(fetchData('nitrousOxide'))
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
  
   return (

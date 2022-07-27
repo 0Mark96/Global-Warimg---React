@@ -9,6 +9,7 @@ const Methane = () => {
 
   useEffect(()=>{
   dispatch(fetchData('methane'))
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
  
   return (

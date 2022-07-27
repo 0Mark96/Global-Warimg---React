@@ -10,15 +10,15 @@ export const fetchData = createAsyncThunk(
     (page)=>{
       switch(page){
         case 'temperature': return getTemperature
-        break;
+        
         case 'carbonDioxide': return getCarbonDioxide
-        break;
+        
         case 'methane': return getMethane
-        break;
+        
         case 'nitrousOxide': return getNitrousOxide
-        break;
+        
         case 'arcticData': return getArcticData
-        break;
+        
         default : return null;
       }
     }
@@ -29,7 +29,7 @@ const initialState = {
     loading:false,
     error:''
   }
-
+  
 export const dataSlice = createSlice({
   name: 'data',
   initialState,
