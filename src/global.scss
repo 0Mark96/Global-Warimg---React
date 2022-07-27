@@ -1,3 +1,5 @@
+@import './Assets/styles/_variable';
+
 *{
     margin: 0;
     padding: 0;
@@ -5,13 +7,14 @@
 }
 body{
     font-family:Arial, Helvetica, sans-serif !important;
+    color: $ownWhite
 }
 
 a{
     text-decoration: none;
-    font-size: 19px !important;
-    color:white !important;
+    font-size: 16px !important;
+    color:$ownWhite !important;
     &:hover{
-        color: orange !important;
+        color: $ownOrange !important;
     }
 }
