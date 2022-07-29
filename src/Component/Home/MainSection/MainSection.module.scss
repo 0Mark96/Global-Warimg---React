@@ -5,7 +5,7 @@
     color:$ownWhite;
    
     position: relative;
-    height:100vh;
+    min-height:100vh;
     padding: 20px;
 
     display: flex;
@@ -17,11 +17,11 @@
         font-weight: 600;
         margin-top: 35%;
         text-align: center;
-        font-size: 32px;
+        font-size: 37px;
     }
     p{
         text-align: center;
-        font-size: 16px;
+        font-size: 18px;
     }
     .btn_explore{
         border: 2px solid $ownBlack;
@@ -38,12 +38,12 @@
         }
         a{
             text-decoration: none;
-            font-size:18px !important;
+            font-size:20px !important;
         }
         
     }
     .scroll_down{
-        margin-bottom: 0%;
+        margin-bottom: 5%;
         font-size: 50px;
     }
     .img1{
@@ -55,5 +55,22 @@
         width: 100%;
         opacity: 0.2;
         z-index: -1;
+    }
+}
+
+// @small devices
+@media screen and (min-width:576px) {
+    .main_section{
+        height: auto;
+        h1{
+            margin-top: 100px;
+        }
+        p{
+            margin-top: 40px;
+        }
+        .btn_explore{
+            margin-top:40px;
+            margin-bottom:40px;
+        }
     }
 }
