@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../Component/Home/Header/Header'
 import styles from './Home.module.scss'
+import MainSection from '../../Component/Home/MainSection/MainSection'
 
 const Home = () => {
   const {home_page} = styles
@@ -8,6 +9,7 @@ const Home = () => {
   return (
     <div className={home_page}>
         <Header />
+        <MainSection />
     </div>
     
   )

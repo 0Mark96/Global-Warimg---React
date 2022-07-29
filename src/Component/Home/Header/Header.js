@@ -15,7 +15,7 @@ const Header = () => {
   }
 
   return (
-        <Navbar collapseOnSelect expand="sm" style={{backgroundColor:'rgb(3, 3, 3)',boxShadow:'0px 1px 20px -10px #FF4D00'}} className='pb-1 pt-1 pb-sm-0 pt-sm-0' >
+        <Navbar collapseOnSelect expand="sm" fixed='top' style={{backgroundColor:'rgb(3, 3, 3)',boxShadow:'0px 1px 20px -10px #FF4D00'}} className='pb-1 pt-1 pb-sm-0 pt-sm-0' >
           <Container fluid className='d-flex'>
             <Navbar.Brand as={Link} to='/'><img src={Logo} alt='Global Warming' width={160}/></Navbar.Brand>
             <Navbar.Toggle as='div' aria-controls="responsive-navbar-nav" className='p-0 me-2'><ToggleIcon isOpen={isOpen} setIsOpen={setIsOpen} /></Navbar.Toggle>

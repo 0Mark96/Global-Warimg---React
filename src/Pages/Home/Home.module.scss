@@ -1,6 +1,14 @@
 @import '../../Assets/styles/_variable';
 
-.home_page{
-    background-color: $ownBlack;
-    height: 1000vh;
+// .home_page{
+    
+// }
+
+a{
+    text-decoration: none;
+    font-size: 16px !important;
+    color:$ownWhite !important;
+    &:hover{
+        color: $ownOrange !important;
+    }
 }

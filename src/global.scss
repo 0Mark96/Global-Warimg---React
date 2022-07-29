@@ -6,15 +6,6 @@
     box-sizing: border-box;
 }
 body{
-    font-family:Arial, Helvetica, sans-serif !important;
-    color: $ownWhite
+    font-family:'Playfair Display', serif !important;
 }
 
-a{
-    text-decoration: none;
-    font-size: 16px !important;
-    color:$ownWhite !important;
-    &:hover{
-        color: $ownOrange !important;
-    }
-}
