@@ -17,7 +17,7 @@ const Header = () => {
   return (
         <Navbar collapseOnSelect expand="sm" fixed='top' style={{backgroundColor:'rgb(3, 3, 3)',boxShadow:'0px 1px 20px -10px #FF4D00'}} className='pb-1 pt-1 pb-sm-0 pt-sm-0' >
           <Container fluid className='d-flex'>
-            <Navbar.Brand as={Link} to='/'><img src={Logo} alt='Global Warming' width={160}/></Navbar.Brand>
+            <Navbar.Brand as={Link} to='/' onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})}><img src={Logo} alt='Global Warming' width={160}/></Navbar.Brand>
             <Navbar.Toggle as='div' aria-controls="responsive-navbar-nav" className='p-0 me-2'><ToggleIcon isOpen={isOpen} setIsOpen={setIsOpen} /></Navbar.Toggle>
             <Navbar.Collapse id="responsive-navbar-nav" >
               <Nav className='container-fluid d-flex flex-sm-row justify-content-sm-end flex-column align-items-center mt-5 mb-5 mt-sm-0 mb-sm-0 '>

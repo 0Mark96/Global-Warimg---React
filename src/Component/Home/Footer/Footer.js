@@ -11,7 +11,7 @@ const Footer = () => {
     return (
     <div className={styles.footer_section}>
         <FontAwesomeIcon onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})} icon={faChevronDown} className={styles.scroll_top}/>
-        <img src={Logo} alt='Global Warming' width={160}/>
+        <img src={Logo} alt='Global Warming' width={160} onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})}/>
         <BtnExplore />
         <p><i>Marco Verardi @2022</i></p>
         <img className={styles.img1} src={bgChartImg} alt=''/>
