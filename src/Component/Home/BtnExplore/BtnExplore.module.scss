@@ -1,0 +1,40 @@
+@import '../../../Assets/styles/_variable';
+
+.btn_explore{
+    border: 2px solid $ownBlack;
+    box-shadow:0px 0px 17px -6px #FF4D00;
+    background-color: $ownBlack;
+    width: fit-content;
+    padding: 0 17px 0 17px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    &:hover{
+        transform: scale(1.05,1.05);
+        -webkit-transform: scale(1.05,1.05);
+        -ms-transform: scale(1.05,1.05);
+    }
+    a{
+        text-decoration: none;
+        font-size:19px !important;
+    }  
+}
+
+// @small devices
+@media screen and (min-width:576px) {
+        .btn_explore{
+            margin-top:60px;
+            margin-bottom:60px;
+        }
+}
+
+
+// @medium devices
+@media screen and (min-width:768px) {
+    .btn_explore{
+        margin-top: 70px;
+        margin-bottom: 70px;
+        a{
+            font-size: 22px !important;
+        }
+       }
+}

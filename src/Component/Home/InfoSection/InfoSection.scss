@@ -1,0 +1,47 @@
+@import '../../../Assets/styles/_variable';
+
+.info-section{
+    background-color: $ownWhite;
+    color: $ownBlack;
+    margin-top: 30px;
+    .accordion-button{
+       background-color: $ownBlack !important;
+       color: $ownWhite !important;
+       &:focus {
+        box-shadow: none;
+        border-color: $ownBlack;
+        }
+       &:after {
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF4D00'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+      }
+    }
+    .accordion-body{
+        background-color: $ownWhite;
+        box-shadow: inset 0px 0px 10px $ownBlack;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .info-section{
+       .accordion{
+        width: 85%;
+        margin: 0 auto;
+       }
+       
+    }
+}
+
+// @extra large devices
+@media screen and (min-width:1200px) {
+    .info-section{
+        .accordion{
+         width: 70%;
+        }
+        .accordion-button{
+            font-size: 22px;
+        }
+        .accordion-body{
+            padding: 30px 70px 30px 70px;
+        }
+     }
+}
