@@ -1,12 +1,16 @@
 @import '../../../Assets/styles/_variable';
 
 .info-section{
-    background-color: $ownWhite;
+    background-color: $ownWhiteBG;
     color: $ownBlack;
-    margin-top: 30px;
+    // margin-top: 30px;
+    border-top: 1px solid $ownWhite;
+    border-bottom: 1px solid $ownWhite;
     .accordion-button{
        background-color: $ownBlack !important;
        color: $ownWhite !important;
+       border-bottom-left-radius: 0 !important;
+       border-bottom-right-radius: 0 !important;
        &:focus {
         box-shadow: none;
         border-color: $ownBlack;
@@ -16,13 +20,16 @@
       }
     }
     .accordion-body{
-        background-color: $ownWhite;
+        background-color: $ownWhiteBG;
         box-shadow: inset 0px 0px 10px $ownBlack;
     }
 }
 
 @media screen and (min-width:768px) {
     .info-section{
+        margin-top: 30px;
+        border-top:none;
+        border-bottom: none;
        .accordion{
         width: 85%;
         margin: 0 auto;

@@ -4,7 +4,6 @@
     background-color: $ownBlack;
     color: $ownWhite;
     
-    margin-top: 30px;
     z-index: 1;
     position: relative;
     display: flex;
@@ -57,6 +56,7 @@
 // @medium devices
 @media screen and (min-width:768px) {
     .footer_section{
+        margin-top: 30px;
         img{
           width: 40%;
         }  
@@ -66,8 +66,9 @@
 // @large devices
 @media screen and (min-width:992px) {
     .footer_section{
+        padding: 20px 30px 5px 30px;
         img{
-          width: 25%;
+          width: 22%;
           margin-top: 0px;
           margin-bottom: 0px;
         }  
