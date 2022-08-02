@@ -1,0 +1,61 @@
+@import '../../../Assets/styles/_variable';
+
+.sideBar_cont{
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 100vh;
+    width: 6%;
+    padding: 20px 10px 30px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    background-color: $ownBlack;
+    box-shadow: 2px 0px 13px $ownBlack;
+    .menu_and_logo{
+        align-self: flex-end;
+        .menu_icon{
+            width: 35px;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1,1.1);
+               -webkit-transform: scale(1.1,1.1);
+               -ms-transform: scale(1.1,1.1);
+            }
+        }
+        .logo_img{
+            display: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.active{
+    width: 18%;
+    .menu_and_logo{
+        align-self: center;
+        display: inline-flex;
+        justify-content: space-between;
+        .menu_icon{
+            align-self: flex-start;
+        }
+        .logo_img{
+            display: inherit;
+            width: 60%;
+        }
+    }
+}
+
+// @extra large devices
+@media screen and (min-width:1200px) {
+    .active{
+        .menu_and_logo{
+            .logo_img{
+                width: 53%;
+            }
+        }
+    }
+    }

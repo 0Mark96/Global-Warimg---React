@@ -10,13 +10,13 @@ import NavLink from './NavLink/NavLink'
 const NavBarMobile = () => {
   const {navbar_mobile_cont,open_menu_icon,active} = styles
   const [isMenuOpen,setIsMenuOpen]= useState(false)
-  console.log(isMenuOpen);
+
   return (
-    <div className={classnames(navbar_mobile_cont,{[active]:isMenuOpen})}>
+    <navbar className={classnames(navbar_mobile_cont,{[active]:isMenuOpen})}>
       <FontAwesomeIcon icon={faChevronDown} className={open_menu_icon} onClick={()=>setIsMenuOpen(!isMenuOpen)}/>
       <Link to='/' className={styles.logo}><img src={Logo} alt='Global Warming'/></Link>
       <NavLink isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> 
-    </div>
+    </navbar>
   )
 }
 

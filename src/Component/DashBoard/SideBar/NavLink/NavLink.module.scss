@@ -1,0 +1,62 @@
+@import '../../../../Assets/styles/_variable';
+
+.nav_container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+    overflow: auto;
+    .link_container{
+        width: 100%;
+        padding: 8px 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:center;
+        margin-top: 3.5vh;
+        &:hover{
+            box-shadow: 0px 0px 10px -4px $ownOrange;
+        }
+        img{
+        width: 32px;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.1,1.1);
+           -webkit-transform: scale(1.1,1.1);
+           -ms-transform: scale(1.1,1.1);
+        }
+        }
+        a{
+            display: none;
+            
+        }
+        &:last-child{
+            margin-top: 15vh;
+        }
+    }
+    .border_left_orange{
+        border-left: 3px solid $ownOrange;
+    }
+}
+
+.active{
+    .link_container{
+        justify-content: flex-start;
+        a{
+         display: inherit;
+         font-size: 15px !important;
+         margin-left: 5%;
+        }
+    }
+}
+
+// @extra large devices
+@media screen and (min-width:1200px) {
+.active{
+    .link_container{
+        a{
+            font-size: 18px !important;
+        }
+    }
+}
+}
