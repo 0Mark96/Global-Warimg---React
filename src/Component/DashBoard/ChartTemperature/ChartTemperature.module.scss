@@ -6,6 +6,7 @@
     box-shadow:0px 0px 10px $ownBlack;
     padding: 15px 3px;
     margin-bottom: 40px;
+    background-color: $ownWhiteBG;
 }
 
 .change_date_container{
@@ -13,10 +14,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // div{
-        // margin: 20px 20px;
+
         button{
-            background-color: transparent;
+            background-color: $ownWhiteBG;
             border: none;
             box-shadow:0px 0px 6px $ownBlack;
             padding: 4px;
@@ -30,7 +30,6 @@
             }
 
         }
-    // }
 }
 // according to button selected adding this style
 .btn_selected{

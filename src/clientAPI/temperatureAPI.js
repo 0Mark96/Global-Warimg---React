@@ -51,7 +51,7 @@ export const getTemperature = axios
                              .then((response)=>response.data.result)
                              .then((fixedresponse) => fixedresponse.map(item => (
                                                         {
-                                                         station:item.station,
+                                                         celcius:item.station,
                                                          time:fixTime(item.time)
                                                         }))
                                   )

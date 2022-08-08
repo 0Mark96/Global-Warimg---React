@@ -15,6 +15,7 @@
     
     background-color: $ownBlack;
     box-shadow: 2px 0px 13px $ownBlack;
+    z-index: 2;
     .menu_and_logo{
         align-self: flex-end;
         .menu_icon{

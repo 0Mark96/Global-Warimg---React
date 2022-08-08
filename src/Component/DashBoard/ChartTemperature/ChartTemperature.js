@@ -3,16 +3,17 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import styles from './ChartTemperature.module.scss';
 
 const ChartTemperature = ({temperature}) => {
-  const [screenSize, setScreenSize] = useState() // change height of chart according to width
+  const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width
   const [temperatureDate,setTemperatureDate] = useState(temperature) // change the range date show on chart on butn clicked
   const [isBtnSelected,setIsBtnSelected]= useState() // if button is selected change style
-  console.log(temperatureDate);
+
   // change aspect of responsive container while window resize
   useEffect(()=>{
     function handleResize() {
       setScreenSize(window.innerWidth)
     }
     window.addEventListener('resize',handleResize)
+    
   })
 
   // change date on btn selected
@@ -35,11 +36,11 @@ const ChartTemperature = ({temperature}) => {
         bottom: -15,
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
+      <CartesianGrid strokeDasharray="2 4" />
       <XAxis dataKey="time" angle={-20}  minTickGap={40} tickSize={15} tickLine={false} height={55}/>
-      <YAxis dataKey="station" domain={[-2, 2]}/>
-      <Tooltip />
-      <Area type="monotone" dataKey="station" stroke="" fill="#FF4D00"/> 
+      <YAxis dataKey="celcius" domain={[-2, 2]}/>
+      <Tooltip contentStyle={{color:'white',backgroundColor:'black',boxShadow:'0px 0px 10px white'}}/>
+      <Area type="monotone" dataKey="celcius" stroke="" fill="#ff3300"/> 
     </AreaChart>
    
   </ResponsiveContainer>

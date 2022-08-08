@@ -1,16 +1,20 @@
 @import '../../Assets/styles/_variable';
 
+
 .singleChartPage{
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   width: 100%;
   min-height: 100vh;
   margin: 0 auto;
+  z-index: 1;
 
   background-color: $ownWhiteBG;
   color: $ownBlack;
+  overflow: hidden;
 
   h1{
     margin-top: 20px;
@@ -22,11 +26,43 @@
     text-align: center;
     margin-bottom: 40px;
     margin-top: 0px;
+    font-weight: 700;
   }
   p{
-    width: 95%;
+    width: 90%;
     margin-top: 40px;
     margin-bottom: 70px;
+  }
+
+  .BG_draw{
+    position: absolute;
+    z-index: -2;
+    background-color: #ff4d0018;
+    border-radius: 100%;
+  }
+  .draw1{
+    top:-50px;
+    left:-30px;
+    width: 230px;
+    height: 230px;
+  }
+  .draw2{
+    top:8%;
+    right:-10%;
+    width: 250px;
+    height: 250px;
+  }
+  .draw3{
+    bottom:35%;
+    left: -6%;
+    width: 250px;
+    height: 250px;
+  }
+  .draw4{
+    top:-50px;
+    left:-30px;
+    width: 250px;
+    height: 250px;
   }
 }
 
@@ -44,6 +80,22 @@
         width: 70vw;
         margin-top: 40px;
         margin-bottom: 40px;
+      }
+      .draw1{
+        width: 350px;
+        height: 350px;
+      }
+      .draw2{
+        top:5%;
+        right:5%;
+        width: 500px;
+        height: 500px;
+      }
+      .draw3{
+        bottom: 8%;
+        left: -10%;
+        width: 500px;
+        height: 500px;
       }
     }
     .active{
