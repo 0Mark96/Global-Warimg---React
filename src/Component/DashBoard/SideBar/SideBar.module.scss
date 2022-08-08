@@ -59,3 +59,10 @@
         }
     }
     }
+// @extra large devices
+@media screen and (min-height:1024px) {
+    .sideBar_cont{
+
+        padding: 20px 10px 200px 10px;
+    }
+}

@@ -1,41 +1,56 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
-  
+import styles from './ChartTemperature.module.scss';
+
 const ChartTemperature = ({temperature}) => {
-  const isLargeScreen = window.innerWidth > 999
+  const [screenSize, setScreenSize] = useState() // change height of chart according to width
+  const [temperatureDate,setTemperatureDate] = useState(temperature) // change the range date show on chart on butn clicked
+  const [isBtnSelected,setIsBtnSelected]= useState() // if button is selected change style
+  console.log(temperatureDate);
+  // change aspect of responsive container while window resize
+  useEffect(()=>{
+    function handleResize() {
+      setScreenSize(window.innerWidth)
+    }
+    window.addEventListener('resize',handleResize)
+  })
+
+  // change date on btn selected
+  const changeDate = (min,max,id) => {
+    setTemperatureDate(temperature.slice(min,max))
+    setIsBtnSelected(id)
+  }
 
   return (
-    <div style={{border:'1px solid black'}}>
-    <ResponsiveContainer width="99%" aspect={isLargeScreen ? 2 : 1}>
+    <>
+    <div className={styles.chart_container}>
+    <ResponsiveContainer width="100%" aspect={screenSize > 767 ? 2 : 1}>
       <AreaChart
-      data={temperature.data} 
-      // margin={{
-      //   top: 10,
-      //   right: 30,
-      //   left: 0,
-      //   bottom: 0,
-      // }}
+      data={temperatureDate} 
+
       margin={{
         top: 0,
-        right: 0,
-        left: -25,
-        bottom: 0,
+        right: 5,
+        left: -40,
+        bottom: -15,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="time" angle={-20}  minTickGap={40} tickSize={15} tickLine={false} height={55} />
+      <XAxis dataKey="time" angle={-20}  minTickGap={40} tickSize={15} tickLine={false} height={55}/>
       <YAxis dataKey="station" domain={[-2, 2]}/>
       <Tooltip />
-      {/* <Brush dataKey='time' height={40} stroke="#003">
-         <AreaChart data={temperature.data}>
-           <Area type="monotone" dataKey="station" stroke="#000"  />
-         </AreaChart>
-      </Brush> */}
-      <Area type="monotone" dataKey="station" stroke="#8884d8" fill="#8884d8"/> 
+      <Area type="monotone" dataKey="station" stroke="" fill="#FF4D00"/> 
     </AreaChart>
    
   </ResponsiveContainer>
   </div>
+  <div className={styles.change_date_container}>
+      <button onClick={()=>changeDate(0,576,1)} className={isBtnSelected === 1 ? styles.btn_selected : null}>1880 - 1928</button>
+      <button onClick={()=>changeDate(576,1140,2)} className={isBtnSelected === 2 ? styles.btn_selected : null} >1928 - 1975</button>
+      <button onClick={()=>changeDate(1140,temperature.lenght,3)} className={isBtnSelected === 3 ? styles.btn_selected : null}>1975 - Present</button>
+      <button onClick={()=>changeDate(0,temperature.lenght,4)} className={isBtnSelected === 4 ? styles.btn_selected : null}>1880 - Present</button>
+  </div>
+  </>
   )
 }
 

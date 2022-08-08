@@ -12,11 +12,11 @@ const NavBarMobile = () => {
   const [isMenuOpen,setIsMenuOpen]= useState(false)
 
   return (
-    <navbar className={classnames(navbar_mobile_cont,{[active]:isMenuOpen})}>
+    <div className={classnames(navbar_mobile_cont,{[active]:isMenuOpen})}>
       <FontAwesomeIcon icon={faChevronDown} className={open_menu_icon} onClick={()=>setIsMenuOpen(!isMenuOpen)}/>
       <Link to='/' className={styles.logo}><img src={Logo} alt='Global Warming'/></Link>
       <NavLink isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> 
-    </navbar>
+    </div>
   )
 }
 

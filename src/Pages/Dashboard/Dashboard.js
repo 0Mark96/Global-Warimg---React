@@ -23,6 +23,7 @@ const Chartsdashboard = () => {
           )}
     /> 
     
+        {/*  PAGES OF GRAPHS */}
         <div className={classnames(singleChartPage,{[active]:isOpen})}>
            <Outlet/>
         </div>

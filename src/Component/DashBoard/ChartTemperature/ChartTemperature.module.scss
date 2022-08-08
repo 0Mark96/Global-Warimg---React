@@ -1,0 +1,64 @@
+@import '../../../Assets/styles/_variable';
+
+.chart_container{
+    width: 100%;
+    max-width: 2000px;
+    box-shadow:0px 0px 10px $ownBlack;
+    padding: 15px 3px;
+    margin-bottom: 40px;
+}
+
+.change_date_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // div{
+        // margin: 20px 20px;
+        button{
+            background-color: transparent;
+            border: none;
+            box-shadow:0px 0px 6px $ownBlack;
+            padding: 4px;
+            margin: 20px 20px;
+            color: $ownBlack;
+            &:hover{
+                transform: scale(1.1,1.1);
+               -webkit-transform: scale(1.1,1.1);
+               -ms-transform: scale(1.1,1.1);
+               box-shadow:0px 0px 10px $ownBlack;
+            }
+
+        }
+    // }
+}
+// according to button selected adding this style
+.btn_selected{
+    background-color: $ownBlack !important;
+    color: $ownOrange !important;
+}
+
+
+// MEDIA QUERRY -------------------------------
+
+
+// @medium devices
+@media screen and (min-width:768px) {
+    .chart_container{
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+// @large devices
+@media screen and (min-width:992px) {
+    .chart_container{
+        width: 67vw;
+        padding: 20px;
+    }
+}
+
+// @extra large devices
+@media screen and (min-width:1200px) {
+
+}
