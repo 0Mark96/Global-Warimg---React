@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
-import styles from './ChartTemperature.module.scss';
+import styles from '../ChartsContainer.module.scss';
 
 const ChartTemperature = ({temperature}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width
