@@ -14,7 +14,7 @@ const Temperature = () => {
   return (
     <>
         <h1>Temperature</h1>
-        <p>This Chart provides on a monthly basis, the global mean surface temperature anomaly from 1880 to the present (in celsius).</p>
+        <p>This chart provides on a monthly basis, the global mean surface temperature anomaly from 1880 to the present (in celsius).</p>
         {temperature.loading && <h1>loading...</h1>}
         {!temperature.loading && temperature.error ? <h1>Error:{temperature.error}</h1> : null}
         {!temperature.loading && temperature.data.length ? (

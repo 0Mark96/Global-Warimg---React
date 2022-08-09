@@ -17,7 +17,7 @@ const CarbonDioxide = () => {
   return (
     <>
         <h1>Carbon Dioxide</h1>
-        <p>This Chart provides on a quasi-daily basis, the amount of carbon dioxide (CO2) in the atmosphere. It is expressed as a mole fraction in dry air, parts per million (ppm).</p>
+        <p>This chart provides on a quasi-daily basis, the amount of carbon dioxide (CO2) in the atmosphere. It is expressed as a mole fraction in dry air, parts per million (ppm).</p>
         {CarbonDioxide.loading && <h1>loading...</h1>}
         {!CarbonDioxide.loading && CarbonDioxide.error ? <h1>Error:{CarbonDioxide.error}</h1> : null}
         {!CarbonDioxide.loading && CarbonDioxide.data.length ? (

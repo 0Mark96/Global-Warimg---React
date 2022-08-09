@@ -9,7 +9,7 @@ export const getMethane = axios
                              .then((response)=>response.data.methane)
                              .then((fixedResponse)=> fixedResponse.map(item=>(
                                 {
-                                  average:item.average,
+                                  methane:item.average,
                                   date:fixDate(item.date)
                                 }
                              )))
