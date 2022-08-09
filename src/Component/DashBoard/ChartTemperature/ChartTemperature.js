@@ -36,7 +36,7 @@ const ChartTemperature = ({temperature}) => {
         bottom: -15,
       }}
     >
-      <CartesianGrid strokeDasharray="2 4" />
+      <CartesianGrid strokeDasharray="1 5" />
       <XAxis dataKey="time" angle={-20}  minTickGap={40} tickSize={15} tickLine={false} height={55}/>
       <YAxis dataKey="celcius" domain={[-2, 2]}/>
       <Tooltip contentStyle={{color:'white',backgroundColor:'black',boxShadow:'0px 0px 10px white'}}/>

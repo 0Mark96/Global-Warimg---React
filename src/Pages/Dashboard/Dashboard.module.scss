@@ -17,9 +17,13 @@
   overflow: hidden;
 
   h1{
-    margin-top: 20px;
+    margin-top: 28px;
     margin-bottom: 40px;
     font-weight: 700;
+    padding: 7px 15px;
+    padding-top: 0px;
+    box-shadow: 0px 7px 10px -5px $ownBlack;
+    background-color: $ownWhiteBG;
   }
   p:first-of-type{
     width: 95%;
@@ -37,7 +41,7 @@
   .BG_draw{
     position: absolute;
     z-index: -2;
-    background-color: #ff4d0018;
+    background: linear-gradient(#ff4d0004,#ff4d0015);
     border-radius: 100%;
   }
   .draw1{
@@ -80,6 +84,9 @@
         width: 70vw;
         margin-top: 40px;
         margin-bottom: 40px;
+      }
+      .BG_draw{
+        background: linear-gradient(#ff4d002d, #ff4d0005);
       }
       .draw1{
         width: 350px;
