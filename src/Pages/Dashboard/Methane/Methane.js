@@ -10,6 +10,7 @@ const Methane = () => {
 
   useEffect(()=>{
   dispatch(fetchData('methane'))
+  window.scrollTo(0,0)
    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
  

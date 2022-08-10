@@ -9,7 +9,7 @@ export const getNitrousOxide = axios
                              .then((response)=>response.data.nitrous)
                              .then((fixedResponse)=> fixedResponse.map(item=>(
                                 {
-                                  average:item.average,
+                                  Nitrous:item.average,
                                   date:fixDate(item.date)
                                 }
                              )))
