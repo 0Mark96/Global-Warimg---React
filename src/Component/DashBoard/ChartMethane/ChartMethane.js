@@ -5,7 +5,7 @@ import styles from '../ChartsContainer.module.scss';
 const ChartMethane = ({methane}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width  
   const [methaneDate,setMethaneDate] = useState(methane)
-  console.log(methaneDate);
+
 // change aspect of responsive container while window resize
   useEffect(()=>{
     function handleResize() {

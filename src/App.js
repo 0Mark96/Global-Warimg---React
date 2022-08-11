@@ -22,9 +22,6 @@ function App() {
           <Route path='nitrous' element={<NitrousOxide />}/>
           <Route path='arctic' element={<ArcticData />}/>
        </Route>
-          
-       
-       
     </Routes>
     </BrowserRouter>
   );

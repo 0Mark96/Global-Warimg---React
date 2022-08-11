@@ -5,7 +5,7 @@ import styles from '../ChartsContainer.module.scss';
 const ChartCarbonDioxide = ({CarbonDioxide}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width  
   const [carbonDioxideDate,setCarbonDioxideDate] = useState(CarbonDioxide)
-console.log(carbonDioxideDate)
+
 // change aspect of responsive container while window resize
   useEffect(()=>{
     function handleResize() {

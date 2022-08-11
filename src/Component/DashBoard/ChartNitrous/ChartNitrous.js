@@ -5,7 +5,7 @@ import styles from '../ChartsContainer.module.scss';
 const ChartNitrous = ({nitrousOxide}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width  
   const [nitrousOxideDate,setNitrousOxideDate] = useState(nitrousOxide)
- console.log(nitrousOxide);
+
   // change aspect of responsive container while window resize
   useEffect(()=>{
     function handleResize() {

@@ -6,7 +6,7 @@ const fixDate = (date)=>{
 
 export const getNitrousOxide = axios
                              .get("https://global-warming.org/api/nitrous-oxide-api")
-                             .then((response)=>response.data.nitrous)
+                             .then((response)=>response.data?.nitrous)
                              .then((fixedResponse)=> fixedResponse.map(item=>(
                                 {
                                   Nitrous:item.average,

@@ -6,7 +6,7 @@ const fixDate = (date)=>{
 
 export const getMethane = axios
                              .get("https://global-warming.org/api/methane-api")
-                             .then((response)=>response.data.methane)
+                             .then((response)=>response.data?.methane)
                              .then((fixedResponse)=> fixedResponse.map(item=>(
                                 {
                                   methane:item.average,

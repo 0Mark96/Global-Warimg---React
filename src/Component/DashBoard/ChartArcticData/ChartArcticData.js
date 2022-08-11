@@ -5,7 +5,7 @@ import styles from '../ChartsContainer.module.scss';
 const ChartArcticData = ({arcticData}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width  
   const [arcticDataDate,setarcticDataDate] = useState(arcticData)
- console.log(arcticData);
+
   // change aspect of responsive container while window resize
   useEffect(()=>{
     function handleResize() {
@@ -31,7 +31,7 @@ const ChartArcticData = ({arcticData}) => {
       margin={{
         top: 0,
         right: 5,
-        left: -27,
+        left: -40,
         bottom: -15,
       }}
     >
@@ -58,8 +58,8 @@ const ChartArcticData = ({arcticData}) => {
   <div className={styles.change_date_container}>
       <button onClick={()=>changeDate(0,15,1)} className={isBtnSelected === 1 ? styles.btn_selected : null}>1979 - 1993</button>
       <button onClick={()=>changeDate(15,30,2)} className={isBtnSelected === 2 ? styles.btn_selected : null} >1994 - 2008</button>
-      <button onClick={()=>changeDate(30,arcticData.lenght,3)} className={isBtnSelected === 3 ? styles.btn_selected : null}>2009 - Present</button>
-      <button onClick={()=>changeDate(0,arcticData.lenght,4)} className={isBtnSelected === 4 ? styles.btn_selected : null}>1979 - Present</button>
+      <button onClick={()=>changeDate(30,arcticData?.lenght,3)} className={isBtnSelected === 3 ? styles.btn_selected : null}>2009 - Present</button>
+      <button onClick={()=>changeDate(0,arcticData?.lenght,4)} className={isBtnSelected === 4 ? styles.btn_selected : null}>1979 - Present</button>
   </div>
   </>
   )

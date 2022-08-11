@@ -11,8 +11,7 @@ const NitrousOxide = () => {
   useEffect(()=>{
   dispatch(fetchData('nitrousOxide'))
   window.scrollTo(0,0)
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  },[dispatch])
  
   return (
     <>
@@ -20,9 +19,9 @@ const NitrousOxide = () => {
         <p>This chart provides on a monthly basis, the amount of nitrous oxide in the atmosphere from 2001 to the present. Expressed as a mole fraction in dry air, parts per million (ppm).</p>
         {nitrousOxide.loading && <h1>loading...</h1>}
         {!nitrousOxide.loading && nitrousOxide.error ? <h1>Error:{nitrousOxide.error}</h1> : null}
-        {!nitrousOxide.loading && nitrousOxide.data.length ? (
+        {!nitrousOxide.loading && !nitrousOxide.error ? (
           <ChartNitrous nitrousOxide={nitrousOxide.data}/>
-        ) : null}  
+        ) : <h3>Sorry for the inconvenience</h3>}  
         <p>
         Nitrous oxide is a gas that is produced by the combustion of fossil fuel and solid waste, nitrogen-base fertilizers, sewage treatment plants, natural processes, and other agricultural and industrial activities.<br />        
         It is the third largest heat-trapping gas in the atmosphere and the biggest ozone-destroying compound emitted by human activities.

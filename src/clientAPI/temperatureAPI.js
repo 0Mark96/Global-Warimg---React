@@ -48,7 +48,7 @@ const fixTime = (time)=>{
 
 export const getTemperature = axios
                              .get("https://global-warming.org/api/temperature-api")
-                             .then((response)=>response.data.result)
+                             .then((response)=>response.data?.result)
                              .then((fixedresponse) => fixedresponse.map(item => (
                                                         {
                                                          celcius:item.station,
