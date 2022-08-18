@@ -6,6 +6,7 @@
     justify-items: center;
     width: 100%;
     overflow: auto;
+    
     .link_container{
         width: 100%;
         padding: 8px 5px;
@@ -17,23 +18,24 @@
         &:hover{
             box-shadow: 0px 0px 10px -4px $ownOrange;
         }
-        img{
-        width: 32px;
-        cursor: pointer;
-        &:hover{
-            transform: scale(1.1,1.1);
-           -webkit-transform: scale(1.1,1.1);
-           -ms-transform: scale(1.1,1.1);
-        }
-        }
-        a{
-            display: none;
-            
-        }
         &:last-child{
             margin-top: 15vh;
         }
+        .link_icon{
+            width: 32px;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1,1.1);
+               -webkit-transform: scale(1.1,1.1);
+               -ms-transform: scale(1.1,1.1);
+            }
+        }
+        
+        a{
+            display: none;
+        }
     }
+    
     .border_left_orange{
         border-left: 3px solid $ownOrange;
     }

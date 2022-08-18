@@ -1,7 +1,8 @@
 @import '../../Assets/styles/_variable';
 
+// global style for all charts pages
 
-.singleChartPage{
+.single_chart_page{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +17,8 @@
   color: $ownBlack;
   overflow: hidden;
 
-  h1{
+  // title of charts
+  .title_chart{
     margin-top: 28px;
     margin-bottom: 40px;
     font-weight: 400;
@@ -26,24 +28,25 @@
     box-shadow: 0px 7px 10px -5px $ownBlack;
     background-color: $ownWhiteBG;
   }
-  p:first-of-type{
+  // first charts description
+  .first_descr_chart{
     width: 95%;
     text-align: center;
     margin-bottom: 40px;
     margin-top: 0px;
     font-weight: 700;
   }
-  p{
+  //second charts decription
+  .second_descr_chart{
     width: 90%;
     margin-top: 40px;
     margin-bottom: 70px;
   }
-
+ // circle in background 
   .BG_draw{
     position: absolute;
     z-index: -2;
     border-radius: 100%;
-    // background: linear-gradient(#87c1f10c,#87c1f131) !important;
   }
   .draw1{
     top:-50px;
@@ -74,14 +77,14 @@
 
 
 @media only screen and (min-width:992px){
-    .singleChartPage{
+    .single_chart_page{
       width: 94%;
       margin-left: 6%;
       min-height: 100vh;
-      p:first-of-type{
+      .first_descr_chart:first-of-type{
         width: 75%;
       }
-      p{
+      .second_descr_chart{
         width: 60vw;
         margin-top: 40px;
         margin-bottom: 40px;

@@ -14,25 +14,24 @@
         transform: rotateX(180deg);
         -webkit-transform: rotateX(180deg);
         -ms-transform: rotateX(180deg);
-
         align-self: flex-end;
         font-size: 30px;
         cursor: pointer;
     }
-    img{
+    .logo{
         margin-top: 30px;
         margin-bottom: 20px;
         width: 50%;
         cursor: pointer;
     }
-    p{
+    .author{
         align-self: flex-start;
         margin-top: 20px;
     }
-    .img1{
+    .bg_img1{
         display: none;
     }
-    .img2{
+    .bg_img2{
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -44,10 +43,10 @@
 // @small devices
 @media screen and (min-width:576px) {
     .footer_section{
-        img{
+        .logo{
           width: 45%;
         }  
-        .img2{
+        .bg_img2{
             top: 0;
         }
     }
@@ -57,7 +56,7 @@
 @media screen and (min-width:768px) {
     .footer_section{
         margin-top: 30px;
-        img{
+        .logo{
           width: 40%;
         }  
     }
@@ -67,18 +66,18 @@
 @media screen and (min-width:992px) {
     .footer_section{
         padding: 20px 30px 5px 30px;
-        img{
+        .logo{
           width: 18%;
           margin-top: 0px;
           margin-bottom: 0px;
         }  
-        p{
+        .author{
             margin-top: 0px; 
         }
         .scroll_top{
             font-size: 37px;
         }
-        .img1{
+        .bg_img1{
             display: block;
             position: absolute;
             bottom: 0;
@@ -87,9 +86,9 @@
             opacity: 0.3;
             z-index: -1;
         }
-        .img2{
+        .bg_img2{
             position: absolute;
-            top: 0;
+            top: 5%;
             right: 3%;
             width: 35%;
             opacity: 0.3;

@@ -4,7 +4,7 @@ import  {Link} from 'react-router-dom'
 
 const BtnExplore = () => {
   return (
-    <button className={styles.btn_explore}><Link to='dashboard'>EXPLORE</Link></button>
+    <Link className={styles.btn_explore} to='dashboard'>EXPLORE</Link>
   )
 }
 

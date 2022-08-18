@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
-import styles from '../ChartsContainer.module.scss';
+import style from '../ChartsContainer.module.scss';
 
 const ChartTemperature = ({temperature}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width
@@ -24,7 +24,7 @@ const ChartTemperature = ({temperature}) => {
 
   return (
     <>
-    <div className={styles.chart_container}>
+    <div className={style.chart_container}>
     <ResponsiveContainer width="100%" aspect={screenSize > 767 ? 2 : 1}>
       <AreaChart
       data={temperatureDate} 
@@ -45,11 +45,11 @@ const ChartTemperature = ({temperature}) => {
    
   </ResponsiveContainer>
   </div>
-  <div className={styles.change_date_container}>
-      <button onClick={()=>changeDate(0,576,1)} className={isBtnSelected === 1 ? styles.btn_selected : null}>1880 - 1928</button>
-      <button onClick={()=>changeDate(576,1140,2)} className={isBtnSelected === 2 ? styles.btn_selected : null} >1928 - 1975</button>
-      <button onClick={()=>changeDate(1140,temperature.lenght,3)} className={isBtnSelected === 3 ? styles.btn_selected : null}>1975 - Present</button>
-      <button onClick={()=>changeDate(0,temperature.lenght,4)} className={isBtnSelected === 4 ? styles.btn_selected : null}>1880 - Present</button>
+  <div className={style.change_date_container}>
+      <button onClick={()=>changeDate(0,576,1)} className={isBtnSelected === 1 ? style.btn_selected : null}>1880 - 1928</button>
+      <button onClick={()=>changeDate(576,1140,2)} className={isBtnSelected === 2 ? style.btn_selected : null} >1928 - 1975</button>
+      <button onClick={()=>changeDate(1140,temperature.lenght,3)} className={isBtnSelected === 3 ? style.btn_selected : null}>1975 - Present</button>
+      <button onClick={()=>changeDate(0,temperature.lenght,4)} className={isBtnSelected === 4 ? style.btn_selected : null}>1880 - Present</button>
   </div>
   </>
   )

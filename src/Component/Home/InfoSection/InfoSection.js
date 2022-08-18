@@ -1,6 +1,8 @@
 import React from 'react'
 import './InfoSection.scss'
 
+// BOOTSTRAP ACCORDION
+
 const InfoSection = () => {
     return (
 <div className='info-section'>

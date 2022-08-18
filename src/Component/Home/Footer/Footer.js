@@ -7,15 +7,16 @@ import {faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import bgChartImg from '../../../Assets/Img/bgChartImg.png'
 
 const Footer = () => {
-    
+    const {footer_section,scroll_top,bg_img1,bg_img2,logo,author} = styles
+
     return (
-    <div className={styles.footer_section}>
-        <FontAwesomeIcon onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})} icon={faChevronDown} className={styles.scroll_top}/>
-        <img src={Logo} alt='Global Warming' width={160} onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})}/>
+    <div className={footer_section}>
+        <FontAwesomeIcon className={scroll_top} onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})} icon={faChevronDown}/>
+        <img src={Logo} className={logo} alt='Global Warming' width={160} onClick={()=>window.scrollTo({top:0,left:0,behavior:'smooth'})}/>
         <BtnExplore />
-        <p><i>Marco Verardi @2022</i></p>
-        <img className={styles.img1} src={bgChartImg} alt=''/>
-        <img className={styles.img2} src={bgChartImg} alt=''/>
+        <p className={author}><i>Marco Verardi @2022</i></p>
+        <img className={bg_img1} src={bgChartImg} alt=''/>
+        <img className={bg_img2} src={bgChartImg} alt=''/>
     </div>
   )
 }

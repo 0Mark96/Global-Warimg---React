@@ -11,7 +11,7 @@ import IceImg from '../../../../Assets/Img/ice.svg';
 import HomeImg from '../../../../Assets/Img/home.svg';
 
 const NavLink = ({isOpen}) => {
-    const {nav_container,active,link_container,border_left_orange} = styles
+    const {nav_container,active,link_container,border_left_orange,link_icon} = styles
         //capture location to add orange line down the link
         let location = useLocation()
         const tempPathName = location.pathname === '/dashboard'
@@ -29,27 +29,27 @@ const NavLink = ({isOpen}) => {
     return (
     <nav className={classnames(nav_container,{[active]:isOpen})}>
         <div className={classnames(link_container,{[border_left_orange]:tempPathName})} onClick={()=>handleLink('')}>
-            <img src={TempImg} alt=''/>
+            <img className={link_icon} src={TempImg} alt=''/>
             <Link to=''>Temperature</Link>   
         </div>
         <div className={classnames(link_container,{[border_left_orange]:carbPathName})} onClick={()=>handleLink('co2')}>
-            <img src={Co2Img} alt=''/>
+            <img className={link_icon} src={Co2Img} alt=''/>
             <Link to='co2'>Carbon Dioxide</Link>   
         </div>
         <div className={classnames(link_container,{[border_left_orange]:methPathName})} onClick={()=>handleLink('methane')}>
-            <img src={MethImg} alt=''/>
+            <img className={link_icon} src={MethImg} alt=''/>
             <Link to='methane'>Methane</Link>   
         </div>
         <div className={classnames(link_container,{[border_left_orange]:nitrPathName})} onClick={()=>handleLink('nitrous')}>
-            <img src={NitrImg} alt=''/>
+            <img className={link_icon} src={NitrImg} alt=''/>
             <Link to='nitrous'>Nitrous Oxide</Link>   
         </div>
         <div className={classnames(link_container,{[border_left_orange]:arcticPathName})} onClick={()=>handleLink('arctic')}>
-            <img src={IceImg} alt=''/>
+            <img className={link_icon} src={IceImg} alt=''/>
             <Link to='arctic'>Polar Ice</Link>   
         </div>
         <div className={link_container} onClick={()=>handleLink('/')}>
-            <img src={HomeImg} alt=''/>
+            <img className={link_icon} src={HomeImg} alt=''/>
             <Link to='/'>Back Home</Link>   
         </div>
     </nav>

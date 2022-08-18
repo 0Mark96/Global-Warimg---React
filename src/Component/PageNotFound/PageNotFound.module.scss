@@ -9,12 +9,13 @@
     align-items: center;
     color: $ownOrange;
     margin-top: 50px;
-    h2{
+    .page_not_found{
         margin-top: 10px;
     }
-    a{
+    .home_link{
      border: 2px solid $ownWhite;
      margin-top:20px;
      padding:5px;
+     text-decoration: none;
     }
 }

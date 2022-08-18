@@ -3,40 +3,29 @@ import NavBarMobile from "../../Component/DashBoard/NavBarMobile/NavBarMobile";
 import styles from './Dashboard.module.scss';
 import Media from 'react-media';
 import SideBar from "../../Component/DashBoard/SideBar/SideBar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classnames from "classnames";
 import { useLocation } from "react-router-dom";
 
 const Chartsdashboard = () => { 
-  const {singleChartPage,active,BG_draw,draw1,draw2,draw3} = styles
+  const {single_chart_page,active,BG_draw,draw1,draw2,draw3} = styles
   const [isOpen,setIsOpen]= useState(true); //is menu open? if so move chart content to right
-  // 'linear-gradient(#ff4d0004,#ff4d0015)'
+
   //change screen color accordin to page
-  const [gradient,setGradient] = useState()
   const location = useLocation()
  
-  useEffect(()=>{
-    switch(location.pathname){
-      case '/dashboard/co2':
-        setGradient('linear-gradient(#8884d805,#8884d828)')
-        break;
-      case '/dashboard/methane':
-        setGradient('linear-gradient(#a75f0c1a,#97540809)')
-        break;
-      case '/dashboard/nitrous':
-        setGradient('linear-gradient(#fdb1470a,#fdb14734)')
-        break;
-      case '/dashboard/arctic':
-        setGradient('linear-gradient(#87c1f10c,#87c1f131)')
-        break;
-      default:
-        setGradient('linear-gradient(#ff4d0004,#ff4d0015)')
-    }
-  },[location])
- 
-  const style = {
-    background:gradient
-  }
+  const urlCases = {
+    '/dashboard': 'linear-gradient(#ff4d0004,#ff4d0015)',
+    '/dashboard/co2': 'linear-gradient(#8884d805,#8884d828)',
+    '/dashboard/methane': 'linear-gradient(#a75f0c1a,#97540809)',
+    '/dashboard/nitrous': 'linear-gradient(#fdb1470a,#fdb14734)',
+    '/dashboard/arctic': 'linear-gradient(#87c1f10c,#87c1f131)',
+    };
+
+    const style = {
+      background: urlCases[location.pathname]
+    } 
+
  
   return (
     <>
@@ -52,7 +41,7 @@ const Chartsdashboard = () => {
     /> 
     
         {/*  PAGES OF GRAPHS */}
-        <div className={classnames(singleChartPage,{[active]:isOpen})}>
+        <div className={classnames(single_chart_page,{[active]:isOpen})}>
            <Outlet/>
            <div className={`${BG_draw} ${draw1}`} style={style}></div>
            <div className={`${BG_draw} ${draw2}`} style={style}></div>

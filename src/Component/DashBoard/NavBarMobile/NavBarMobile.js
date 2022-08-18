@@ -8,13 +8,13 @@ import Logo from '../../../Assets/Img/logo.png';
 import NavLink from './NavLink/NavLink'
 
 const NavBarMobile = () => {
-  const {navbar_mobile_cont,open_menu_icon,active} = styles
+  const {navbar_mobile_cont,logo_link,logo_img,open_menu_icon,active} = styles
   const [isMenuOpen,setIsMenuOpen]= useState(false)
 
   return (
     <div className={classnames(navbar_mobile_cont,{[active]:isMenuOpen})}>
       <FontAwesomeIcon icon={faChevronDown} className={open_menu_icon} onClick={()=>setIsMenuOpen(!isMenuOpen)}/>
-      <Link to='/' className={styles.logo}><img src={Logo} alt='Global Warming'/></Link>
+      <Link to='/' className={logo_link}><img className={logo_img} src={Logo} alt='Global Warming'/></Link>
       <NavLink isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/> 
     </div>
   )

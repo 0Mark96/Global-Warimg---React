@@ -17,16 +17,19 @@
   ::-webkit-scrollbar-thumb:hover {
     background: $ownOrange;
   }
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     background-color: $ownBlack;
     max-width: 2500px;
     margin: 0 auto;
 }
+
 body{
     font-family:'Playfair Display', serif !important;
 

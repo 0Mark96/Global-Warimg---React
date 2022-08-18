@@ -13,12 +13,12 @@
     align-items: center;
     justify-content: space-between;
     z-index: 1;
-    h1{
+    .home_title{
         font-weight: 600;
         margin-top: 100px;
         text-align: center;
     }
-    p{
+    .info_site{
         text-align: center;
         font-size: 18px;
         margin-top: 10px;
@@ -28,10 +28,10 @@
         font-size: 45px;
         cursor: pointer;
     }
-    .img1{
+    .bg_chart_img1{
         display: none;
     }
-    .img2{
+    .bg_chart_img2{
         position: absolute;
         bottom: 0%;
         width: 100%;
@@ -46,10 +46,10 @@
         justify-content: inherit;
         height: auto;
         min-height: fit-content;
-        h1{
+        .home_title{
             margin-top: 120px;
         }
-        p{
+        .info_site{
             font-size: 22px;
             margin-top: 60px;
         }
@@ -59,10 +59,10 @@
 // @medium devices
 @media screen and (min-width:768px) {
     .main_section{
-       h1{
+       .home_title{
         margin-top: 150px;
        }
-       p{
+       .info_site{
         margin-top: 70px;
         width: 80%;
        }
@@ -72,7 +72,7 @@
 // @large devices
 @media screen and (min-width:992px) {
     .main_section{
-       .img1{
+       .bg_chart_img1{
         display: block;
         position: absolute;
         top: 15%;
@@ -82,7 +82,7 @@
         z-index: -1;
         transform: rotateY(180deg);
        }
-       .img2{
+       .bg_chart_img2{
         width: 45%;
         left: 0%;
         bottom: 5%;
