@@ -6,6 +6,9 @@ import SideBar from "../../Component/DashBoard/SideBar/SideBar";
 import { useState } from "react";
 import classnames from "classnames";
 import { useLocation } from "react-router-dom";
+import {QueryClient,QueryClientProvider} from 'react-query';
+
+const queryClient = new QueryClient()
 
 const Chartsdashboard = () => { 
   const {single_chart_page,active,BG_draw,draw1,draw2,draw3} = styles
@@ -42,7 +45,11 @@ const Chartsdashboard = () => {
     
         {/*  PAGES OF GRAPHS */}
         <div className={classnames(single_chart_page,{[active]:isOpen})}>
-           <Outlet/>
+          
+          <QueryClientProvider client={queryClient}>
+              <Outlet/>
+          </QueryClientProvider>
+           
            <div className={`${BG_draw} ${draw1}`} style={style}></div>
            <div className={`${BG_draw} ${draw2}`} style={style}></div>
            <div className={`${BG_draw} ${draw3}`} style={style}></div>

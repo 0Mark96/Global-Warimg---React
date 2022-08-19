@@ -4,7 +4,7 @@ import styles from '../ChartsContainer.module.scss';
 
 const ChartArcticData = ({arcticData}) => {
   const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width  
-  const [arcticDataDate,setarcticDataDate] = useState(arcticData)
+  const [arcticDataTime,setarcticDataTime] = useState(arcticData)
 
   // change aspect of responsive container while window resize
   useEffect(()=>{
@@ -17,7 +17,7 @@ const ChartArcticData = ({arcticData}) => {
 // change date on btn selected
     const [isBtnSelected,setIsBtnSelected]= useState() // if button is selected change style
     const changeDate = (min,max,id) => {
-        setarcticDataDate(arcticData.slice(min,max))
+        setarcticDataTime(arcticData.slice(min,max))
         setIsBtnSelected(id)
       }
 
@@ -26,7 +26,7 @@ const ChartArcticData = ({arcticData}) => {
     <div className={styles.chart_container}>
     <ResponsiveContainer width="100%" aspect={screenSize > 767 ? 2 : 1}>
       <AreaChart
-      data={arcticDataDate} 
+      data={arcticDataTime} 
 
       margin={{
         top: 0,

@@ -3,7 +3,7 @@ import styles from './SideBar.module.scss';
 import logo from '../../../Assets/Img/logo.png';
 import classnames from 'classnames';
 import NavLink from './NavLink/NavLink.js';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = ({isOpen,setIsOpen}) => {
     const {sideBar_cont,active,menu_icon,logo_img,menu_and_logo} = styles

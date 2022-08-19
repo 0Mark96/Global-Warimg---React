@@ -1,29 +1,27 @@
 import React from 'react'
-import { useDispatch, useSelector} from "react-redux";
-import { fetchData } from '../../../redux/counter';
 import {useEffect} from 'react'
 import ChartMethane from '../../../Component/DashBoard/ChartMethane/ChartMethane';
 import style from '../Dashboard.module.scss';
+import {useQuery} from 'react-query'
+import { fetchData } from '../../../clientAPI/fetchData';
+import { URL } from '../../../clientAPI/API';
 
 const Methane = () => {
-  const methane = useSelector(state => state.data)
-  const dispatch = useDispatch()
   const {title_chart,first_descr_chart,second_descr_chart} = style 
+  const {isLoading, isError, error, data: methaneData } = useQuery('methaneData',()=>fetchData(URL.methaneUrl))
 
   useEffect(()=>{
-  dispatch(fetchData('methane'))
   window.scrollTo(0,0)
-  },[dispatch])
+  },[])
  
   return (
     <>
         <h1 className={title_chart}>Methane</h1>
         <p className={first_descr_chart}>This chart provides on a monthly basis, the amount of methane in the atmosphere from 1983 to the present. Expressed as a mole fraction in dry air, parts per million (ppm).</p>
-        {methane.loading && <h1>loading...</h1>}
-        {!methane.loading && methane.error ? <h1>Error:{methane.error}</h1> : null}
-        {!methane.loading && !methane.error ? (
-          <ChartMethane methane={methane.data}/>
-        ) : <h3>Sorry for the inconvenience</h3>}  
+        {
+        isLoading ? <h1>Loading...</h1> : isError ? <h1>Error message: {error.message}</h1> :
+          <ChartMethane methaneData={methaneData?.methane}/>
+        }
         <p className={second_descr_chart}>
         Methane is a flammable gas formed by geological and biological processes. Some of the natural ones are leaks from natural gas systems and wetlands.
         50-65% of total global methane emissions come from human activities. These include livestock, agriculture, oil and gas systems, waste from homes and businesses, landfills, and so on.

@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 import style from '../ChartsContainer.module.scss';
 
-const ChartTemperature = ({temperature}) => {
-  const [screenSize, setScreenSize] = useState(window.innerWidth) // change height of chart according to width
-  const [temperatureDate,setTemperatureDate] = useState(temperature) // change the range date show on chart on butn clicked
+
+const ChartTemperature = ({temperatureData}) => {
+  const [screenSize, setScreenSize] = useState(window.innerWidth) // change aspect of chart according to width
+  const [temperatureTime,setTemperatureTime] = useState(temperatureData) // change the range Time show on chart on butn clicked
   const [isBtnSelected,setIsBtnSelected]= useState() // if button is selected change style
 
   // change aspect of responsive container while window resize
@@ -13,13 +14,59 @@ const ChartTemperature = ({temperature}) => {
       setScreenSize(window.innerWidth)
     }
     window.addEventListener('resize',handleResize)
-    
   })
 
-  // change date on btn selected
-  const changeDate = (min,max,id) => {
-    setTemperatureDate(temperature.slice(min,max))
+  // change Time on btn selected
+  const changeTime = (min,max,id) => {
+    setTemperatureTime(temperatureData.slice(min,max))
     setIsBtnSelected(id)
+  }
+ 
+
+  // This function change years label (XAxis), transforming decimal number in month 
+  const formatXAxis = (value)=>{
+    let integer = Math.floor(value)
+    let decimal = Math.round((value - integer) * 100)
+    switch(decimal){
+      case 4:
+        return integer + 'Gen';
+        
+      case 13:
+        return integer + 'Feb'
+        
+      case 21:
+        return integer + 'Mar'
+        
+      case 29:
+        return integer + 'Apr'
+        
+      case 38:
+        return integer + 'May'
+        
+      case 46:
+        return integer + 'Jun'
+        
+      case 54:
+        return integer + 'Jul'
+        
+      case 63:
+        return integer + 'Aug'
+        
+      case 71:
+        return integer + 'Sep'
+        
+      case 79:
+        return integer + 'Oct'
+        
+      case 88:
+        return integer + 'Nov'
+        
+      case 96:
+        return integer + 'Dec'
+        
+      default:
+        return integer
+    } 
   }
 
   return (
@@ -27,7 +74,7 @@ const ChartTemperature = ({temperature}) => {
     <div className={style.chart_container}>
     <ResponsiveContainer width="100%" aspect={screenSize > 767 ? 2 : 1}>
       <AreaChart
-      data={temperatureDate} 
+      data={temperatureTime} 
 
       margin={{
         top: 0,
@@ -37,19 +84,20 @@ const ChartTemperature = ({temperature}) => {
       }}
     >
       <CartesianGrid strokeDasharray="1 5" />
-      <XAxis dataKey="time" angle={-20}  minTickGap={40} tickSize={15} tickLine={false} height={55}/>
-      <YAxis dataKey="celcius" domain={[-2, 2]}/>
-      <Tooltip contentStyle={{color:'white',backgroundColor:'black',boxShadow:'0px 0px 10px white'}}/>
-      <Area type="monotone" dataKey="celcius" stroke="" fill="#ff3300"/> 
+      <XAxis dataKey="time" angle={-20}  minTickGap={40} tickSize={15} tickLine={false} height={55} tickFormatter={formatXAxis}/>
+      <YAxis dataKey="station" domain={[-2, 2]}/>
+      <Tooltip labelFormatter={formatXAxis} contentStyle={{color:'white',backgroundColor:'black',boxShadow:'0px 0px 10px white'}}/>
+      <Area type="monotone" dataKey="station" stroke="" fill="#ff3300"/> 
     </AreaChart>
    
   </ResponsiveContainer>
   </div>
+    {/* RANGE TIME MIN-MAX CHART */}
   <div className={style.change_date_container}>
-      <button onClick={()=>changeDate(0,576,1)} className={isBtnSelected === 1 ? style.btn_selected : null}>1880 - 1928</button>
-      <button onClick={()=>changeDate(576,1140,2)} className={isBtnSelected === 2 ? style.btn_selected : null} >1928 - 1975</button>
-      <button onClick={()=>changeDate(1140,temperature.lenght,3)} className={isBtnSelected === 3 ? style.btn_selected : null}>1975 - Present</button>
-      <button onClick={()=>changeDate(0,temperature.lenght,4)} className={isBtnSelected === 4 ? style.btn_selected : null}>1880 - Present</button>
+      <button onClick={()=>changeTime(0,576,1)} className={isBtnSelected === 1 ? style.btn_selected : null}>1880 - 1928</button>
+      <button onClick={()=>changeTime(576,1140,2)} className={isBtnSelected === 2 ? style.btn_selected : null} >1928 - 1975</button>
+      <button onClick={()=>changeTime(1140,temperatureData.lenght,3)} className={isBtnSelected === 3 ? style.btn_selected : null}>1975 - Present</button>
+      <button onClick={()=>changeTime(0,temperatureData.lenght,4)} className={isBtnSelected === 4 ? style.btn_selected : null}>1880 - Present</button>
   </div>
   </>
   )
