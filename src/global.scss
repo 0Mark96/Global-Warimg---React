@@ -1,16 +1,16 @@
 @import './Assets/styles/_variable';
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 7px;
   }
 /* Track */
 ::-webkit-scrollbar-track {
-    background: $ownBlack;
+    background: $ownWhite;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: $ownWhite;
+    background: $ownBlack;
   }
   
   /* Handle on hover */

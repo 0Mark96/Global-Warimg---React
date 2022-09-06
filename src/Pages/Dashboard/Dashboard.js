@@ -6,11 +6,13 @@ import SideBar from "../../Component/DashBoard/SideBar/SideBar";
 import { useState, useEffect} from "react";
 import classnames from "classnames";
 import { useLocation } from "react-router-dom";
+import LoadingBar from "../../Component/DashBoard/LoadingBar/LoadingBar";
 
 const Chartsdashboard = () => { 
   const {single_chart_page,active,BG_draw,draw1,draw2,draw3} = styles
   const [isOpen,setIsOpen]= useState(true); //is menu open? if so move chart content to right
-  
+  // const [isLoading,setIsLoading] = useState(true)
+
   // on route change scroll to top pages
   const  {pathname} = useLocation()
   useEffect(() => {
@@ -52,7 +54,8 @@ const Chartsdashboard = () => {
     
         {/*  PAGES OF GRAPHS */}
         <div className={classnames(single_chart_page,{[active]:isOpen})}>
-          
+              
+              <LoadingBar />
               <Outlet/>
            
            <div className={`${BG_draw} ${draw1}`} style={style}></div>
