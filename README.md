@@ -23,6 +23,21 @@ Here's what the site should include:
 
 • Polar Ice - https://global-warming.org/api/arctic-api.
 
+### Built with
+
+• HTML
+
+• CSS-SCSS
+
+• ReactJS
+
+• React-query
+
+• React-bootstrap
+
+• Recharts
+
+
 ## Author
 - LinkedIn ➟ [Marco Verardi](https://www.linkedin.com/in/marco-verardi-664555150/)
 

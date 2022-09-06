@@ -11,7 +11,6 @@ import LoadingBar from "../../Component/DashBoard/LoadingBar/LoadingBar";
 const Chartsdashboard = () => { 
   const {single_chart_page,active,BG_draw,draw1,draw2,draw3} = styles
   const [isOpen,setIsOpen]= useState(true); //is menu open? if so move chart content to right
-  // const [isLoading,setIsLoading] = useState(true)
 
   // on route change scroll to top pages
   const  {pathname} = useLocation()
